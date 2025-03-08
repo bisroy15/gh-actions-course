@@ -1,5 +1,5 @@
 name: 06-contexts
-
+run-name: My Cutom Workflow run name - ${{runner.os}}
 on: 
     workflow_dispatch:
     push:
