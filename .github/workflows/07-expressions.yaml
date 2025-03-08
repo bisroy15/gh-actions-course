@@ -1,4 +1,6 @@
 name: 07-expressions
+run-name: 07-Expressopns | DEBUG - ${{inputs.debug && 'ON' || 'OFF'}}
+
 
 on: 
     push:
