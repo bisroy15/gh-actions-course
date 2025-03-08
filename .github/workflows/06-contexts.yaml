@@ -44,7 +44,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Print Env Variales
-            run: |
-              echo "Workflow env: $MY_WORKFLOW_VAR"
-              echo "Overwritten env: $MY_OVERWRITTEN_VAR"
+              run: |
+                echo "Workflow env: $MY_WORKFLOW_VAR"
+                echo "Overwritten env: $MY_OVERWRITTEN_VAR"
 
