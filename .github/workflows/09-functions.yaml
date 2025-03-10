@@ -1,8 +1,7 @@
 name: 09-functions
 
 on:
-    pull_request:
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
     echo1:
@@ -15,17 +14,16 @@ jobs:
                 cat << EOF
                 ${{ toJSON(github.event.pull_request.label)  }}
                 EOF
+            - name: Test
+              if: ${{ !cancelled() }}
+              run: echo "Test"
             - name: Bug Stop
               if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix') }}
               run: echo "I am a bug fix"
-            - name: Sleep for 20 seconds
-              run: sleep 20
-            - name: Failinig Step
-              run: exit 1
-            - name: I will be skipped
+            - name: I will execute
               if: ${{ success() }}
               run: echo "I will print if previous step succeeds"
-            - name: I will execute
+            - name: I will skip
               if: ${{ failure() }}
               run: echo "I will print if any previous step fails"
             - name: I will execute
